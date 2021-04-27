@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"os"
 
@@ -23,16 +22,17 @@ func main() {
 		os.Exit(1)
 	}
 
-	b, err := json.Marshal(chart)
-	if err != nil {
-		fmt.Println("err:", err)
-		os.Exit(1)
-	}
-	fmt.Println("chart:", string(b))
-
 	fmt.Println("first trade:", chart.FirstTrade())
 
 	fmt.Println("market time:", chart.MarketTime())
+
+	fmt.Println("symbol:", chart.Symbol())
+
+	fmt.Println("price:", chart.Price())
+
+	fmt.Println("previous:", chart.PrevClosePrice())
+
+	fmt.Println("price delta:", chart.Delta())
 
 	fmt.Println("done")
 }
