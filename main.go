@@ -22,17 +22,25 @@ func main() {
 		os.Exit(1)
 	}
 
-	fmt.Println("first trade:", chart.FirstTrade())
+	//fmt.Println("first trade:", chart.FirstTrade())
+	//
+	//fmt.Println("market time:", chart.MarketTime())
+	//
+	//fmt.Println("symbol:", chart.Symbol())
+	//
+	//fmt.Println("price:", chart.Price())
+	//
+	//fmt.Println("previous:", chart.PrevClosePrice())
+	//
+	//fmt.Println("price delta:", chart.Delta())
+	//
+	//fmt.Println("done")
 
-	fmt.Println("market time:", chart.MarketTime())
+	prefix := ""
+	dPerc := chart.DeltaPerc()
+	if dPerc >= 0 {
+		prefix = "+"
+	}
 
-	fmt.Println("symbol:", chart.Symbol())
-
-	fmt.Println("price:", chart.Price())
-
-	fmt.Println("previous:", chart.PrevClosePrice())
-
-	fmt.Println("price delta:", chart.Delta())
-
-	fmt.Println("done")
+	fmt.Printf("%s %.2f %s%.2f (%s%.2f%%)\n", chart.Symbol(), chart.Price(), prefix, chart.Delta(), prefix, chart.DeltaPerc())
 }
