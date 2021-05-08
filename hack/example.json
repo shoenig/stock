@@ -1,0 +1,6 @@
+{
+    "semis": ["amd", "intc", "tsm", "nvda", "avgo", "mu", "qcom", "txn", "xlnx"],
+    "memes": ["gme", "amc"],
+    "cars": ["f", "tsla", "fcau", "vwagy", "gm"],
+    "indx": ["qqq", "spy", "^dji"]
+}
