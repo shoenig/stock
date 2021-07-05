@@ -11,7 +11,7 @@ current stock ticker pricing.
 
 The `stock` command can be installed by running
 ```bash
-go install gophers.dev/cmds/weather@latest
+go install gophers.dev/cmds/stock@latest
 ```
 
 # Optional Configuration
