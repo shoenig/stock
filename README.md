@@ -20,7 +20,7 @@ If `~/stock/stock.json` exists, it can be used to display groups of
 lists of ticker pricing data.
 
 ```
-cat ~/.config/stock/stock.json
+$ cat ~/.config/stock/stock.json
 {
     "semis": ["amd", "intc", "tsm", "nvda", "xlnx"],
     "memes": ["gme", "amc", "bb", "pltr"],
@@ -51,7 +51,7 @@ TSM 118.91 +0.49 (+0.41%)
 ### With config file
 
 ```
-stock
+$ stock
 [cars]
 	F 14.93 +0.02 (+0.13%)
 	TSLA 678.90 +0.98 (+0.14%)
