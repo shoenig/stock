@@ -2,30 +2,14 @@ package tool
 
 import (
 	"encoding/json"
-	"os"
-	"path/filepath"
+	"strings"
 )
 
-func findFile() string {
-	// todo: XDG
-	return filepath.Join(os.Getenv("HOME"), ".config/stock/stock.json")
-}
-
-func Load(paths []string) (map[string][]string, error) {
-	return load(paths[0])
-}
-
-func load(path string) (map[string][]string, error) {
-	f, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-
+func Load(groups string) (map[string][]string, error) {
 	m := make(map[string][]string)
-
-	if decErr := json.NewDecoder(f).Decode(&m); decErr != nil {
+	r := strings.NewReader(groups)
+	if decErr := json.NewDecoder(r).Decode(&m); decErr != nil {
 		return nil, decErr
 	}
-
 	return m, nil
 }
