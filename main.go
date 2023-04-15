@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"gophers.dev/cmds/stock/tool"
-	yahoofinance "gophers.dev/pkgs/yahoo-finance"
+	"github.com/shoenig/stock/tool"
+	yahoofinance "github.com/shoenig/yahoo-finance"
 )
 
 func getTickers(args []string) []string {
