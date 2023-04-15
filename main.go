@@ -16,6 +16,5 @@ func main() {
 	)
 	if err := cli.Run(os.Args[1:]); err != nil {
 		_, _ = fmt.Fprintf(os.Stderr, "failed to run: %s\n", err)
-
 	}
 }
