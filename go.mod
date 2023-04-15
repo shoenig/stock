@@ -1,5 +1,5 @@
-module gophers.dev/cmds/stock
+module github.com/shoenig/stock
 
-go 1.16
+go 1.20
 
-require gophers.dev/pkgs/yahoo-finance v0.0.1
+require github.com/shoenig/yahoo-finance v0.0.2

@@ -4,14 +4,14 @@ Use `stock` to see current stock ticker pricing
 
 # Project Overview
 
-Module `gophers.dev/cmds/stock` provides a command-line utility for reporting
+Module `github.com/shoenig/stock` provides a command-line utility for reporting
 current stock ticker pricing.
 
 # Getting Started
 
 The `stock` command can be installed by running
 ```bash
-go install gophers.dev/cmds/stock@latest
+go install github.com/shoenig/stock@latest
 ```
 
 # Optional Configuration
@@ -76,10 +76,10 @@ $ stock
 
 # Contributing
 
-The `gophers.dev/cmds/stock` module is always improving with new features and
+The `github.com/shoenig/stock` module is always improving with new features and
 error corrections. For contributing bug fixes and new features please file an
 issue.
 
 # License
 
-The `gophers.dev/cmds/stock` module is open source under the [BSD](LICENSE)
+The `github.com/shoenig/stock` module is open source under the [BSD](LICENSE)

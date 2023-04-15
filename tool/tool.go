@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	yahoofinance "gophers.dev/pkgs/yahoo-finance"
+	yahoofinance "github.com/shoenig/yahoo-finance"
 )
 
 type CLI struct {
