@@ -2,34 +2,63 @@ package tool
 
 import (
 	"fmt"
+	"io"
 	"os"
 
 	yahoofinance "github.com/shoenig/yahoo-finance"
 )
 
 type CLI struct {
-	yf yahoofinance.Client
+	filepath string
+	defaults string
+	yf       yahoofinance.Client
 }
 
-func New(yf yahoofinance.Client) *CLI {
-	return &CLI{yf: yf}
+func New(opts ...Option) *CLI {
+	cli := new(CLI)
+	for _, opt := range opts {
+		opt(cli)
+	}
+	return cli
 }
 
 func (cli *CLI) Run(tickers []string) error {
-	if len(tickers) == 0 {
-		return cli.runFile(findFile())
+	if len(tickers) > 0 {
+		for _, ticker := range tickers {
+			if err := cli.run(ticker, ""); err != nil {
+				return err
+			}
+		}
+		return nil
 	}
 
-	for _, ticker := range tickers {
-		if err := cli.run(ticker, ""); err != nil {
+	var groups = cli.defaults
+	if rc := cli.open(); rc != nil {
+		custom, err := io.ReadAll(rc)
+		if err != nil {
 			return err
 		}
+		groups = string(custom)
 	}
-	return nil
+
+	return cli.runGroups(groups)
 }
 
-func (cli *CLI) runFile(filename string) error {
-	m, loadErr := Load([]string{filename})
+func (cli *CLI) open() io.ReadCloser {
+	if cli.filepath == "" {
+		return nil
+	}
+
+	f, err := os.Open(cli.filepath)
+	if err != nil {
+		return nil
+	}
+
+	return f
+}
+
+func (cli *CLI) runGroups(groups string) error {
+	m, loadErr := Load(groups)
 	if loadErr != nil {
 		return loadErr
 	}

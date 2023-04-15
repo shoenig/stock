@@ -16,11 +16,11 @@ go install github.com/shoenig/stock@latest
 
 # Optional Configuration
 
-If `~/stock/stock.json` exists, it can be used to display groups of
+If `~/.config/stock.json` exists, it can be used to display groups of
 lists of ticker pricing data.
 
 ```
-$ cat ~/.config/stock/stock.json
+$ cat ~/.config/stock.json
 {
     "semis": ["amd", "intc", "tsm", "nvda", "xlnx"],
     "memes": ["gme", "amc", "bb", "pltr"],
