@@ -1,5 +1,5 @@
 {
     "semis": ["amd", "intc", "tsm", "nvda"],
-    "cloud": ["hcp", "net", "docn", "mdb"],
+    "cloud": ["hcp", "net", "docn", "mdb", "ddog"],
     "index": ["qqq", "spy", "^dji"]
 }
